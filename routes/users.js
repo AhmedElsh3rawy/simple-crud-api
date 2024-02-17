@@ -8,6 +8,7 @@ import {
   modifyUser,
   updateUser,
 } from "../controllers/users.controllers.js";
+
 const router = express.Router();
 
 router.get("/", getUsers);
