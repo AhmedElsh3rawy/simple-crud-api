@@ -4,20 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 
 const router = express.Router();
 
-let users = [
-	{
-		firstName: "John",
-		lastName: "Wick",
-		age: 30,
-		id: "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d",
-	},
-	{
-		firstName: "Dean",
-		lastName: "Winchester",
-		age: 25,
-		id: "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb0x",
-	},
-];
+let users = [];
 
 router.get("/", (req, res) => {
 	res.send(users);
@@ -61,6 +48,7 @@ router.put("/:userId", (req, res) => {
 	users = users.filter((user) => user.id !== id);
 	const user = req.body;
 	users.push({ ...user, id: uuidv4() });
+
 	res.send(`Updated`);
 });
 
