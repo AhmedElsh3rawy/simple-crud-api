@@ -1,18 +1,18 @@
 import { SlowBuffer } from "buffer";
 import express from "express";
 import {
-	getUsers,
-	createUser,
-	addUser,
-	deleteUser,
-	modifyUser,
-	updateUser,
+  getUsers,
+  getUser,
+  addUser,
+  deleteUser,
+  modifyUser,
+  updateUser,
 } from "../controllers/users.controllers.js";
 const router = express.Router();
 
 router.get("/", getUsers);
 
-router.get("/:userId", createUser);
+router.get("/:userId", getUser);
 
 router.post("/", addUser);
 
